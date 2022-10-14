@@ -46,7 +46,7 @@ rnds = np.linspace(cheby[0].min(), cheby[0].max(), 100)#generamos nums rand. en 
 vand = chebyshev.chebvander(cheby[0],len(cheby[0])-1)#encontramos la matriz vandermonde del grado 9
 c = linalg.solve(vand,cheby[1])# type: ignore #funcion lineal para la matriz vandermonde y la segunda matriz en cheby
 func = Chebyshev(c) #llama la clase para poder retornar los coeficientes de chebyshev en orden de grado inc.
-figura=plt.figure() #creamos la figura
+figura=plt.figure(figsize=(15,4)) #creamos la figura
 grid = plt.grid()  #creamos la figura y la grilla
 title = plt.title("interpolacion de chebyshev") #creamos el titulo
 xlabel=plt.xlabel("t(s)") #creamos el titulo del eje x

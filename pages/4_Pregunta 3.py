@@ -36,7 +36,7 @@ def value(arr, range, step):
 f1,f2 = np.load("f1.npy"),np.load("f2.npy")
 x = np.arange(start=1,stop=50,step=1)
 val1,val2 = value(f1,x,1),value(f2,x,2)
-a = plt.figure()
+a = plt.figure(figsize=(12,3))
 a = plt.title("least square polynomial"),plt.xlabel('t(s)'), plt.ylabel('f(x)')
 a = plt.plot(x,f1,'o'), plt.plot(x,f2,'o'), plt.plot(x,val1), plt.plot(x,val2)
 #puntos de la 1        puntos de la 2       LSP de la 1     LSP de la 2

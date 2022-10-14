@@ -27,7 +27,7 @@ signal = np.load("signal.npy")
 x = np.arange(start=0,stop=100,step=1) #definimos nuestro rango/escala
 wienersignal,medsignal = wiener(signal), medfilt(signal) #usamos metodos de scipy.signal para calcular los valores del arreglo tras pasarlos por cada funcion
 
-a=plt.figure()
+a=plt.figure(figsize=(12,3))
 a=plt.title("signal filter"),plt.xlabel('t(s)'), plt.ylabel('signal'), plt.grid() #iniciamos nuestro pyplot
 a=plt.plot(x,signal), plt.plot(x,medsignal), plt.plot(x,wienersignal) #agregamos a nuestro pyplot los puntos de los arreglos signal, y los arreglos resultantes de los filtros
 cambio = ['Ocultar Código','Mostrar Código']
