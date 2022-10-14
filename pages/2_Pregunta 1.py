@@ -48,7 +48,7 @@ HuU = np.log10(abs(HuU))
 # Creando un dataframe con los momentos Hu de cada vocal.
 df = pandas.DataFrame({"   A    ": HuA, "  E    ": HuE, "  I    ": HuI, "  O    ": HuO, "  U    ": HuU})
 df.index = ['Log(H1)', 'Log(H2)', 'Log(H3)', 'Log(H4)', 'Log(H5)', 'Log(H6)', 'Log(H7)']  # type: ignore se agrega el tipo ignore para que no marque error en el index
-print("\nEstos son los momentos de Hu de las vocales:", df)'''
+print("Estos son los momentos de Hu de las vocales:", df)'''
 cambio = ['Ocultar Código','Mostrar Código']
 mostrar = st.selectbox('Seleccionar opcion',cambio)
 if mostrar == 'Mostrar Código':
@@ -70,10 +70,10 @@ u = image[0:100, 430:540]
 # Cálculo de los momentos Hu de la imagen. Usando flatten para convertir la matriz en un vector
 
 momentosa = (cv2.moments(a))
-HuA = cv2.HuMoments(momentosa).flatten()
-HuA= np.log10(abs(HuA)) 
-momentose = (cv2.moments(e))
-HuE = cv2.HuMoments(momentose).flatten()
+HuA = cv2.HuMoments(momentosa).flatten() #se usa flatten para convertir la matriz en un vector
+HuA= np.log10(abs(HuA)) # se usa log10 para obtener los momentos de Hu y abs para obtener el valor absoluto
+momentose = (cv2.moments(e)) # se repite el proceso para cada vocal
+HuE = cv2.HuMoments(momentose).flatten() 
 HuE= np.log10(abs(HuE))
 momentosi = (cv2.moments(i))
 HuI= cv2.HuMoments(momentosi).flatten()
@@ -86,8 +86,9 @@ HuU = cv2.HuMoments(momentosu).flatten()
 HuU = np.log10(abs(HuU))
 
 
-# Creando un dataframe con los momentos Hu de cada vocal.
-df = pandas.DataFrame({"   A    ": HuA, "  E    ": HuE, "  I    ": HuI, "  O    ": HuO, "  U    ": HuU})
+
+df = pandas.DataFrame({"   A    ": HuA, "  E    ": HuE, "  I    ": HuI, "  O    ": HuO, "  U    ": HuU}) 
+# se crea un dataframe con los momentos de Hu de cada vocal
 df.index = ['Log(H1)', 'Log(H2)', 'Log(H3)', 'Log(H4)', 'Log(H5)', 'Log(H6)', 'Log(H7)']  # type: ignore se agrega el tipo ignore para que no marque error en el index
 print("\nEstos son los momentos de Hu de las vocales: \n\n", df, "\n")
 
