@@ -11,6 +11,16 @@ st.sidebar.success("Seleccionar Pregunta")
         
 st.header('Ejercicio 2')
 st.image('2.png')
+st.write('''
+         En este ejercicio se pide recortar y rotar una imagen. Para esto se debe usar la libreria PIL (Python Image Library).
+         nosotros usaremos la libreria PIL para recortar y rotar la imagen, seguido de esto se debe guardar la imagen recortada y rotada.
+         Guardaremos las imagenes recortadas con un nombre nuevo y las rotadas con un nombre nuevo, usando un loop for que recorre una lista de recortes con un for para 
+         facilitar el proceso de recortar la imagen.
+         
+         Para la rotacion simplemente usaremos la funcion rotate de la libreria PIL, para rotar la imagen 75, 100, 45 y 120 grados. 
+         para la plantilla de la imagen rotada se debe usar el parametro expand=True para que la imagen no se recorte al hacer dicha rotacion.
+         Tambien tenemos que tener en cuenta que la imagen rotada debe ser guardada con un nombre nuevo. para poder insertarla con mas facilidad
+         ''')	
 codigo  = '''# Crops the image and saves it as "nombre_nuevo"
 def recortar(img, areas_recortes, nombre_nuevo): # img es la imagen original, areas_recortes es una tupla con las coordenadas de la esquina superior izquierda y la esquina inferior derecha del recorte, nombre_nuevo es el nombre de la imagen recortada
     imagenes_recortadas = img.crop(areas_recortes).resize((116, 116)) # recorta la imagen original y la redimensiona a 116x116

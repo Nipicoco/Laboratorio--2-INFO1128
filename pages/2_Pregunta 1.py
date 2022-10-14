@@ -12,7 +12,8 @@ st.sidebar.success("Seleccionar Pregunta")
         
 st.header('Ejercicio 1')
 st.image('1.png')
-st.write('''n este codigo se muestra como cargar una imagen y mostrarla en la GUI, partiremos usando la libreria OpenCV para cargar la imagen y luego la transformaremos
+st.write('''
+         En este codigo se muestra como cargar una imagen y mostrarla en la GUI, partiremos usando la libreria OpenCV para cargar la imagen y luego la transformaremos
          a un formato de escala de grises.
          Tambien usaremos panda para crear una tabla con los valores de la imagen y la mostraremos en la GUI.
          En conjunto con panda y OpenCV, usaremos la libreria numpy para crear un arreglo de la imagen y luego guardaremos los datos de este arreglo dentro de una variable para poder

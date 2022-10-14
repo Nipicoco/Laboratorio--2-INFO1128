@@ -11,8 +11,13 @@ st.sidebar.success("Seleccionar Pregunta")
         
 st.header('Ejercicio 4')
 st.image('4.png')
-st.write('''#Explicacion
-         
+st.write('''
+         Este ejercicio consiste en aplicar un filtro a una señal de ruido.
+         con signal.wiener() y signal.medfilt() se aplican los filtros de wiener, 
+         este filtro es para eliminar el ruido gaussiano y medfilt es para eliminar el ruido impulsivo (salt and pepper).
+         con plt.plot() se grafican las señales filtradas y no filtradas.
+         usando plt.legend() se agrega una leyenda a la grafica.
+         y finalmente usando plt.show() se muestra la grafica.
          ''')
 codigo = '''
 import numpy as np

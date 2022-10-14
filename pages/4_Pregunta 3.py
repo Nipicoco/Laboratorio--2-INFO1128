@@ -10,7 +10,7 @@ st.sidebar.success("Seleccionar Pregunta")
         
 st.header('Ejercicio 3')
 st.image('3.png')
-st.write('''#Explicacion de codigo
+st.write('''
          
 Primero definimos una funcion que nos permitira graficar los valores de un arreglo, en este caso el arreglo de la imagen, con un polinomio de grado 3, y luego lo graficamos.
 Tambien definimos un arreglo de 100 valores, que nos servira para graficar el polinomio, luego los graficamos usando la funcion plt.plot() de matplotlib junto con la funcion plt.show() para mostrar el grafico.

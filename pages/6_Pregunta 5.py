@@ -12,7 +12,14 @@ st.sidebar.success("Seleccionar Pregunta")
         
 st.header('Ejercicio 5')
 st.image('5.png')
-
+st.write('''
+         t sera un arreglo de 100 puntos entre 0 y 5, este sera generado con np.linspace(), linspace es una funcion de numpy que genera un arreglo de n puntos entre dos valores.
+         x = t es una asignacion de valores, x sera igual a t por lo que x sera un arreglo de 100 puntos aleatorios.
+         detrender es una funcion de scipy.signal que elimina la tendencia de una señal, en este caso la señal es x.
+         
+         con plt.plot() se grafican las señales filtradas y no filtradas de tendencia y con plt.legend() se agrega una leyenda a la grafica.
+         Seguido de esto se hara el plt para una con tendencia y otra sin tendencia.
+         ''')
 codigo = '''
 import numpy as np
 import matplotlib.pyplot as plt

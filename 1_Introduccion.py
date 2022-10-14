@@ -8,6 +8,7 @@ st.set_page_config(
     page_icon="💻",
 )
 st.title("Taller 2 Interfaces Graficas")
+st.header('Hecho por: Nicolas Vergara y Roberto Nieves')
 st.sidebar.success("Seleccionar Pregunta")
         
 '''
