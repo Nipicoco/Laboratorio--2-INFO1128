@@ -12,7 +12,8 @@ st.sidebar.success("Seleccionar Pregunta")
         
 st.header('Ejercicio 1')
 st.image('1.png')
-codigo = '''import cv2
+codigo = '''
+import cv2
 import pandas
 import numpy as np
 image = cv2.imread("vocales.png") # Cargamos la imagen
