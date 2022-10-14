@@ -10,7 +10,19 @@ st.sidebar.success("Seleccionar Pregunta")
         
 st.header('Ejercicio 3')
 st.image('3.png')
-codigo = '''import numpy as np
+st.write('''#Explicacion de codigo
+         
+Primero definimos una funcion que nos permitira graficar los valores de un arreglo, en este caso el arreglo de la imagen, con un polinomio de grado 3, y luego lo graficamos.
+Tambien definimos un arreglo de 100 valores, que nos servira para graficar el polinomio, luego los graficamos usando la funcion plt.plot() de matplotlib junto con la funcion plt.show() para mostrar el grafico.
+
+def value() es una funcion que recibe 3 parametros, el primero es el arreglo que queremos graficar, el segundo es el rango de valores que queremos graficar, y el tercero es el grado del polinomio que queremos graficar.
+np.arange es una funcion que nos permite crear un arreglo de valores.
+
+la variable val es un arreglo que contiene los valores del polinomio de grado 3, que se grafica en el rango de valores que le pasamos como parametro.
+
+         ''')	
+codigo = '''
+import numpy as np
 import matplotlib.pyplot as plt
 def value(arr, range, step):
             #composito d polinomios, polyfit nos entrega los coeficientes que luego usamos para graficar
@@ -30,7 +42,7 @@ mostrar = st.selectbox('Seleccionar opcion',cambio)
 if mostrar == 'Mostrar Código':
     st.code(codigo , language='python')
 def value(arr, range, step):
-    val = np.polyval(np.polyfit(range,arr,step), range)
+    val = np.polyval(np.polyfit(range,arr,step), range) #composito d polinomios, polyfit nos entrega los coeficientes que luego usamos para graficar
     return val
     
 f1,f2 = np.load("f1.npy"),np.load("f2.npy")

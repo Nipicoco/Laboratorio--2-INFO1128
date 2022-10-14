@@ -11,6 +11,9 @@ st.sidebar.success("Seleccionar Pregunta")
         
 st.header('Ejercicio 4')
 st.image('4.png')
+st.write('''#Explicacion
+         
+         ''')
 codigo = '''
 import numpy as np
 import matplotlib.pyplot as plt

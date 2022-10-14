@@ -12,7 +12,19 @@ st.sidebar.success("Seleccionar Pregunta")
         
 st.header('Ejercicio 1')
 st.image('1.png')
-codigo = '''
+st.write('''n este codigo se muestra como cargar una imagen y mostrarla en la GUI, partiremos usando la libreria OpenCV para cargar la imagen y luego la transformaremos
+         a un formato de escala de grises.
+         Tambien usaremos panda para crear una tabla con los valores de la imagen y la mostraremos en la GUI.
+         En conjunto con panda y OpenCV, usaremos la libreria numpy para crear un arreglo de la imagen y luego guardaremos los datos de este arreglo dentro de una variable para poder
+         tener un registro de los datos de la imagen, en este caso, los parametros de recorte de la imagen y los valores de los pixeles de la imagen.
+         
+         Para calcular los momentos de la imagen, usaremos la libreria OpenCV y la funcion cv2.HuMoments() para calcular los momentos Hu de la imagen y luego le aplicaremos nuevamente Moments
+         Esto para poder calcular los momentos centrales de la imagen.
+         
+         Usaremos abs y log10 para calcular los momentos invariantes de la imagen y luego los convertiremos a valor absoluto y a escala logaritmica para hacer los numeros mas legibles.
+         Por ultimo usaremos la libreria pandas para crear una tabla con los momentos invariantes de la imagen y la mostraremos en la GUI.
+         ''')
+codigo= '''
 import cv2
 import pandas
 import numpy as np
@@ -31,10 +43,10 @@ u = image[0:100, 430:540]
 
 momentosa = (cv2.moments(a))
 HuA = cv2.HuMoments(momentosa).flatten()
-HuA= np.log10(abs(HuA)) 
+HuA= np.log10(abs(HuA)) # se usa log10 para obtener los momentos de Hu y abs para obtener el valor absoluto
 momentose = (cv2.moments(e))
 HuE = cv2.HuMoments(momentose).flatten()
-HuE= np.log10(abs(HuE))
+HuE= np.log10(abs(HuE))# se repite el proceso para cada vocal
 momentosi = (cv2.moments(i))
 HuI= cv2.HuMoments(momentosi).flatten()
 HuI= np.log10(abs(HuI))
@@ -51,7 +63,7 @@ df.index = ['Log(H1)', 'Log(H2)', 'Log(H3)', 'Log(H4)', 'Log(H5)', 'Log(H6)', 'L
 print("Estos son los momentos de Hu de las vocales:", df)'''
 cambio = ['Ocultar Código','Mostrar Código']
 mostrar = st.selectbox('Seleccionar opcion',cambio)
-if mostrar == 'Mostrar Código':
+if mostrar == 'Mostrar Código': # Si se selecciona mostrar código se muestra el código
     st.code(codigo , language='python')
 image = cv2.imread("vocales.png") # Cargamos la imagen
 image = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY) # Convertimos a escala de grises
