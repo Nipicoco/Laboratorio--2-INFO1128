@@ -20,6 +20,8 @@ Tambien usaremos la libreria OpenCV para cargar imagenes y las mostraremos en nu
  
 Un ejemplo de lo que haremos en este taller es el siguiente:
 '''
+st.image('plantillas.png')
+st.image('plot3.png')
 
 
 
